@@ -27,7 +27,7 @@
 			              <td>".$value['blog_desc']."</td>
 			              <td><img src='".base_url().$value['blog_img']."' class='img-fluid' width='100'></td>
 			              
-			              <td><a class=\"btn btn-info\" href='".base_url().'admin/blog/editblog/1'."'>Edit</a></td>
+			              <td><a class=\"btn btn-info\" href='".base_url().'admin/blog/editblog/'.$value['blogid']."'>Edit</a></td>
 			              
 			              <td><a class=\"btn delete btn-danger\" href='#.' data-id='".$value['blogid']."'>Delete</a></td>
 
@@ -87,4 +87,19 @@
 
 		}
 	});
+
+
+	<?php 
+
+			if (isset($_SESSION['updated'])) {
+				if ($_SESSION['updated'] == "yes") {
+					echo 'alert("Data has been updated!");';
+				}else if($_SESSION['updated'] == "no"){
+					echo 'alert("Some error occurred & data not updated!");';
+
+				}
+			}
+
+	 ?>
+
 </script>
